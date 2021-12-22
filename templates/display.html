@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+	<table>
+
+		<tr>
+			<th>productCode</th>
+			<th>productName</th>
+			<th>MSRP</th>
+		</tr>{% for i in name %}
+		<tr>
+			<td>{{ i[7] }}</td>
+			<td>{{ i[1] }}</td>
+			<td>{{ i[3] }} </td><td><li><a href="{{url_for('display', type =  i[7]  )}}">clear</a></li></td>
+		</tr>  {% endfor %}
+	</table>
+	<h1>Rs.. {{ price }}</h1>
+<a href="http://127.0.0.1:5000/">Home</a>
+
+<a href="checkout">Proceed to checkout</a>
+
+</body>
+
+</html>
+
+
